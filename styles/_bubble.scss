@@ -1,0 +1,25 @@
+$white: #FFF5FF;
+
+.bubble {
+  background: $white;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: 280px;
+  left: -150px;
+  display: flex;
+  justify-content: center;
+}
+.bubble::after {
+  content: ' ';
+  position: absolute;
+  background-color: $white;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  transform: rotateZ(45deg);
+  top: 22px;
+  right: -6px;
+  transform: skewX( -55deg );
+}

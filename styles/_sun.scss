@@ -1,0 +1,40 @@
+$yellow: #ffea00;
+$yellow2: #ffc300;
+
+.sun-container {
+  position: relative;
+  animation: rotate-sun 8s infinite linear;
+  height: 80px;
+  width: 80px;
+  margin: 2rem 6rem 0 0;
+  align-self: flex-end;
+  // filter: drop-shadow(-10px 10px #554100);
+}
+
+.sun {
+  position: absolute;
+  background-color: $yellow2;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  z-index: 999;
+}
+
+.shine {
+  position: absolute;
+  background-color: $yellow;
+  height: 80px;
+  width: 80px;
+}
+.shine2 {
+  transform: rotateZ(45deg);
+}
+
+@keyframes rotate-sun {
+  50% {
+    transform: rotateZ(180deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

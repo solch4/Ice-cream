@@ -1,0 +1,24 @@
+@use 'sun';
+@use 'ice-cream';
+@use 'face';
+@use 'bubble';
+@use 'heart';
+
+$sky: #0099ff;
+$sky2: #6ac3ff;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(45deg, $sky, $sky2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+}
