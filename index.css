@@ -200,7 +200,7 @@
 
 @keyframes heart-shake {
   50% {
-    transform: rotateZ(45deg) scale(1.1);
+    transform: rotateZ(45deg) scale(1.15);
   }
 }
 * {

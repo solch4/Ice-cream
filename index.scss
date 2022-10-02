@@ -1,8 +1,8 @@
-@use 'sun';
-@use 'ice-cream';
-@use 'face';
-@use 'bubble';
-@use 'heart';
+@use './styles/sun';
+@use './styles/ice-cream';
+@use './styles/face';
+@use './styles/bubble';
+@use './styles/heart';
 
 $sky: #0099ff;
 $sky2: #6ac3ff;
