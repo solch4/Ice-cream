@@ -1,6 +1,7 @@
 .sun-container {
   position: relative;
-  animation: rotate-sun 8s infinite linear;
+  -webkit-animation: rotate-sun 8s infinite linear;
+          animation: rotate-sun 8s infinite linear;
   height: 80px;
   width: 80px;
   margin: 2rem 6rem 0 0;
@@ -23,8 +24,17 @@
   width: 80px;
 }
 
-.shine2 {
+.shine:nth-child(2) {
   transform: rotateZ(45deg);
+}
+
+@-webkit-keyframes rotate-sun {
+  50% {
+    transform: rotateZ(180deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
 }
 
 @keyframes rotate-sun {
@@ -89,48 +99,51 @@
   width: 100%;
 }
 
-.left-eye,
-.right-eye {
+.eyes > * {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: #D45CBF;
-  border: 1px solid #D45CBF;
-  animation: blink infinite 4.5s ease;
+  background-color: #d45cbf;
+  border: 1px solid #d45cbf;
+  -webkit-animation: blink infinite 4.5s ease;
+          animation: blink infinite 4.5s ease;
   position: relative;
 }
-
-.left-eye::before,
-.right-eye::before {
+.eyes > *::before, .eyes > *::after {
   content: " ";
   position: absolute;
+  border-radius: 50%;
+  background-color: #fff5ff;
+}
+.eyes > *::before {
   width: 10px;
   height: 10px;
-  border-radius: 50%;
-  background-color: #FFF5FF;
   top: 2px;
   left: 2px;
 }
-
-.left-eye::after,
-.right-eye::after {
-  content: " ";
-  position: absolute;
+.eyes > *::after {
   width: 6px;
   height: 6px;
-  border-radius: 50%;
-  background-color: #FFF5FF;
   bottom: 3px;
   right: 3px;
 }
 
 .mouth {
-  background-color: #D45CBF;
+  background-color: #d45cbf;
   height: 25px;
   width: 50%;
   margin-top: 16px;
   border-radius: 4px 4px 20px 20px;
   box-shadow: 0px -3px #ffa7ef inset;
+}
+
+@-webkit-keyframes blink {
+  10% {
+    transform: translateY(12px) scale(1.1, 0.05);
+  }
+  20% {
+    transform: translateY(0) scale(1);
+  }
 }
 
 @keyframes blink {
@@ -142,7 +155,7 @@
   }
 }
 .bubble {
-  background: #FFF5FF;
+  background: #fff5ff;
   height: 80px;
   width: 80px;
   border-radius: 50%;
@@ -152,11 +165,10 @@
   display: flex;
   justify-content: center;
 }
-
 .bubble::after {
   content: " ";
   position: absolute;
-  background-color: #FFF5FF;
+  background-color: #fff5ff;
   height: 40px;
   width: 40px;
   z-index: -1;
@@ -167,35 +179,37 @@
 }
 
 .heart {
-  background-color: rgb(255, 45, 91);
+  background-color: #ff2d5b;
   height: 20px;
   width: 20px;
   transform: rotateZ(45deg);
   position: absolute;
   top: 35px;
-  animation: heart-shake 1s infinite ease-in;
+  -webkit-animation: heart-shake 1s infinite ease-in;
+          animation: heart-shake 1s infinite ease-in;
 }
-
-.heart::before {
+.heart::before, .heart::after {
   content: " ";
   position: absolute;
-  background-color: rgb(255, 45, 91);
+  background-color: inherit;
   height: 20px;
   width: 20px;
+}
+.heart::before {
   border-radius: 50% 0 0 50%;
   top: 0px;
   right: 15px;
 }
-
 .heart::after {
-  content: " ";
-  position: absolute;
-  background-color: rgb(255, 45, 91);
-  height: 20px;
-  width: 20px;
   border-radius: 50% 50% 0 0;
   bottom: 15px;
   left: 0px;
+}
+
+@-webkit-keyframes heart-shake {
+  50% {
+    transform: rotateZ(45deg) scale(1.15);
+  }
 }
 
 @keyframes heart-shake {
@@ -217,6 +231,4 @@ body {
   min-height: 100vh;
   max-width: 1000px;
   margin: 0 auto;
-}
-
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

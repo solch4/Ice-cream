@@ -1,11 +1,9 @@
-@use './styles/sun';
-@use './styles/ice-cream';
-@use './styles/face';
-@use './styles/bubble';
-@use './styles/heart';
-
-$sky: #0099ff;
-$sky2: #6ac3ff;
+@import './styles/base/colors';
+@import './styles/sun';
+@import './styles/ice-cream';
+@import './styles/face';
+@import './styles/bubble';
+@import './styles/heart';
 
 * {
   margin: 0;
@@ -13,7 +11,7 @@ $sky2: #6ac3ff;
 }
 
 body {
-  background: linear-gradient(45deg, $sky, $sky2);
+  background: linear-gradient(45deg, $dark-sky, $light-sky);
   display: flex;
   justify-content: center;
   align-items: center;
